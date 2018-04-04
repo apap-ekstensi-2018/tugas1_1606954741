@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragment :: head">
+</head>
+
+<body>
+
+ <header id="header" th:replace="fragments/fragment :: header">
+ </header>
+ 
+ <section id="heroV2">
+    <div class="hero-container">
+      <div class="row justify-content-md-center">
+      <div class="col-md-6 col-center">
+      	
+      		<h2>Mahasiswa Tertua</h2>
+      		
+      		<table class="table table-bordered">
+                  <tbody class="text-left">
+						<tr>
+							<td><b>NIK</b></td>
+							<td th:text="${tertua.npm}"></td>
+						</tr>
+						<tr>
+							<td><b>Nama</b></td>
+							<td th:text="${tertua.nama}"></td>
+						</tr>
+						<tr>
+							<td><b>Tempat/Tanggal Lahir</b></td>
+							<td th:text="${tertua.tempat_lahir} + ', ' + ${tertua.tanggal_lahir}"></td>
+						</tr>
+						<tr>
+							<td><b>Jenis Kelamin</b></td>
+							<td th:text="${tertua.jenis_kelamin} == 0? Pria: Wanita"></td>
+						</tr>
+						<tr>
+							<td><b>Agama</b></td>
+							<td th:text="${tertua.agama}"></td>
+						</tr>
+						<tr>
+							<td><b>Golongan Darah</b></td>
+							<td th:text="${tertua.golongan_darah}"></td>
+						</tr>
+						<tr>
+							<td><b>Tahun Masuk</b></td>
+							<td th:text="${tertua.tahun_masuk}"></td>
+						</tr>
+						<tr>
+							<td><b>Jalur Masuk</b></td>
+							<td th:text="${tertua.jalur_masuk}"></td>
+						</tr>
+						<tr>
+							<td><b>Status</b></td>
+							<td th:text="${tertua.status}"></td>
+						</tr>
+                  </tbody>
+            </table>
+      		
+      		
+      		<h2>Mahasiswa Termuda</h2>
+      		
+      		<table class="table table-bordered">
+                  <tbody class="text-left">
+						<tr>
+							<td><b>NIK</b></td>
+							<td th:text="${termuda.npm}"></td>
+						</tr>
+						<tr>
+							<td><b>Nama</b></td>
+							<td th:text="${termuda.nama}"></td>
+						</tr>
+						<tr>
+							<td><b>Tempat/Tanggal Lahir</b></td>
+							<td th:text="${termuda.tempat_lahir} + ', ' + ${termuda.tanggal_lahir}"></td>
+						</tr>
+						<tr>
+							<td><b>Jenis Kelamin</b></td>
+							<td th:text="${termuda.jenis_kelamin} == 0? Pria: Wanita"></td>
+						</tr>
+						<tr>
+							<td><b>Agama</b></td>
+							<td th:text="${termuda.agama}"></td>
+						</tr>
+						<tr>
+							<td><b>Golongan Darah</b></td>
+							<td th:text="${termuda.golongan_darah}"></td>
+						</tr>
+						<tr>
+							<td><b>Tahun Masuk</b></td>
+							<td th:text="${termuda.tahun_masuk}"></td>
+						</tr>
+						<tr>
+							<td><b>Jalur Masuk</b></td>
+							<td th:text="${termuda.jalur_masuk}"></td>
+						</tr>
+						<tr>
+							<td><b>Status</b></td>
+							<td th:text="${termuda.status}"></td>
+						</tr>
+                  </tbody>
+            </table>
+      		
+      	</div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

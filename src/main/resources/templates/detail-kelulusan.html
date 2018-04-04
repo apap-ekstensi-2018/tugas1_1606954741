@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragment :: head">
+</head>
+
+<body>
+
+ <header id="header" th:replace="fragments/fragment :: header">
+ </header>
+ 
+ <section id="heroV2">
+    <div class="hero-container">
+      <div class="row justify-content-md-center">
+      <div class="col-md-10 col-center">
+      	
+      		<h2>Presentase Kelulusan</h2>
+ 			<div class="row">
+			  <div class="col-sm-6">
+			  
+				<div class="form-group row">
+	      			<div class="col-md-6">
+				    	<label for="name" class="col-md-6 col-form-label"><b>Tahun</b></label>
+				    </div>
+				    <div class="col-md-6">
+				      <label for="name" class="col-md-6 col-form-label" th:text="${tahun}"></label>
+				    </div>
+				</div>
+	      		<div class="form-group row">
+	      			<div class="col-md-6">
+				    	<label for="name" class="col-md-6 col-form-label"><b>Program Studi</b></label>
+				    </div>
+				    <div class="col-md-6">
+				      <label for="name" class="col-md-6 col-form-label" th:text="${detailMhs.nama_prodi}"></label>
+				    </div>
+				</div>
+				<div class="form-group row">
+	      			<div class="col-md-6">
+				    	<label for="name" class="col-md-6 col-form-label"><b>Fakultas</b></label>
+				    </div>
+				    <div class="col-md-6">
+				      <label for="name" class="col-md-6 col-form-label" th:text="${detailMhs.nama_fakultas}"></label>
+				    </div>
+				</div>      		
+				<div class="form-group row">
+	      			<div class="col-md-6">
+				    	<label for="name" class="col-md-6 col-form-label"><b>Universitas</b></label>
+				    </div>
+				    <div class="col-md-6">
+				      <label for="name" class="col-md-6 col-form-label" th:text="${detailMhs.nama_univ}"></label>
+				    </div>
+				</div>  
+			  
+			  </div>
+			  <div class="col-sm-6">
+			  	<div class="form-group row">
+      				<div class="col-md-6">
+			    		<h1 th:text="${percentage}+'%'"></h1>
+			    	</div>
+				</div>
+	      		<div class="form-group row">
+	      			<div class="col-md-6">
+				    	<label th:text="${totalLulus}+' dari '+${detailMhs.total}+' Mahasiswa Telah Lulus'">
+				    </div>
+				    
+				</div>
+				  
+			  </div>
+			</div>
+      		
+			
+      	</div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

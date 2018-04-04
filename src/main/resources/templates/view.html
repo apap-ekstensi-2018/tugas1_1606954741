@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragment :: head">
+</head>
+
+<body>
+
+ <header id="header" th:replace="fragments/fragment :: header">
+ </header>
+ 
+ <section id="heroV2">
+    <div class="hero-container">
+      <div class="row justify-content-md-center">
+      <div class="col-md-6 col-center">
+      	
+      		<h2>Lihat Data Mahasiswa - <label th:text="${student.npm}"></label></h2>
+      		
+      		<table class="table table-bordered">
+                  <tbody class="text-left">
+						<tr>
+							<td><b>NIK</b></td>
+							<td th:text="${student.npm}"></td>
+						</tr>
+						<tr>
+							<td><b>Nama</b></td>
+							<td th:text="${student.nama}"></td>
+						</tr>
+						<tr>
+							<td><b>Tempat/Tanggal Lahir</b></td>
+							<td th:text="${student.tempat_lahir} + ', ' + ${tanggal_lahir}"></td>
+						</tr>
+						<tr>
+							<td><b>Program Studi</b></td>
+							<td th:text="${student.nama_prodi}"></td>
+						</tr>
+						<tr>
+							<td><b>Fakultas</b></td>
+							<td th:text="${student.nama_fakultas}"></td>
+						</tr>
+						<tr>
+							<td><b>Universitas</b></td>
+							<td th:text="${student.nama_univ}"></td>
+						</tr>
+						<tr>
+							<td><b>Jenis Kelamin</b></td>
+							<td th:text="${student.jenis_kelamin} == 0? Pria: Wanita"></td>
+						</tr>
+						<tr>
+							<td><b>Agama</b></td>
+							<td th:text="${student.agama}"></td>
+						</tr>
+						<tr>
+							<td><b>Golongan Darah</b></td>
+							<td th:text="${student.golongan_darah}"></td>
+						</tr>
+						<tr>
+							<td><b>Tahun Masuk</b></td>
+							<td th:text="${student.tahun_masuk}"></td>
+						</tr>
+						<tr>
+							<td><b>Jalur Masuk</b></td>
+							<td th:text="${student.jalur_masuk}"></td>
+						</tr>
+						<tr>
+							<td><b>Status</b></td>
+							<td th:text="${student.status}"></td>
+						</tr>
+                  </tbody>
+            </table>
+      		
+      		
+      		
+      		
+      	</div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

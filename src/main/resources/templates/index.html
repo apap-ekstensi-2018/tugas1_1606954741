@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragment :: head">
+</head>
+
+<body>
+
+ <header id="header" th:replace="fragments/fragment :: header">
+ </header>
+ 
+ <section id="hero">
+    <div class="hero-container">
+      <h1>Selamat Datang</h1>
+      <h2>"Make Your Achievement Counted!!"</h2>
+      	<hr />
+           <form action="/mahasiswa" method="GET" role="form" class="contactForm">
+             <div class="form-group">
+               <label>Masukkan Nomor Pokok Mahasiswa</label>
+               <input type="text" name="npm" class="form-control" id="name" placeholder="Nomor Pokok Mahasiswa	" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+               <div class="validation"></div>
+             </div>
+             <div class="text-center"><button class="btn btn-default" type="submit">Lihat</button></div>
+           </form>
+              
+      
+      
+    </div>
+  </section>
+
+</body>
+</html>

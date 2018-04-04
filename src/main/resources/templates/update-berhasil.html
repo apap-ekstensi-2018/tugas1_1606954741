@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragment :: head">
+</head>
+
+<body>
+
+ <header id="header" th:replace="fragments/fragment :: header">
+ </header>
+ 
+ <section id="heroV2">
+    <div class="hero-container">
+      <div class="row justify-content-md-center">
+      <div class="col-md-10">
+      	
+      		<h2>Suskes!</h2>
+      		<h4 th:text="'Mahasiswa dengan NPM ' +${npm} +' berhasil diubah'"></h4>	
+      	</div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

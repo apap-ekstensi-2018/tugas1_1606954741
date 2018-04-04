@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragment :: head">
+</head>
+
+<body>
+
+ <header id="header" th:replace="fragments/fragment :: header">
+ </header>
+ 
+ <section id="heroV2">
+    <div class="hero-container">
+      <div class="row justify-content-md-center">
+      <div class="col-md-10">
+      	
+      		<h2 th:text="${method} == 'add'? 'Tambah Mahasiswa' : 'Ubah Mahasiswa'"></h2>
+      		
+      		<form th:action="${method} == 'add'? @{/mahasiswa/tambah} : @{/mahasiswa/ubah/} + *{npm}" th:object="${student}" method="POST">
+			  <input type="hidden" th:field="*{npm}">
+			  <div class="form-group row">
+			    <label for="name" class="col-sm-2 col-form-label">Nama Lengkap</label>
+			    <div class="col-sm-6">
+			      <input type="text" class="form-control" name="name" id="name" th:field="*{nama}" data-validation="required" data-validation-length="min4"/>
+			    </div>
+			  </div>
+			  <div class="form-group row">
+			    <label for="tempat_lahir" class="col-sm-2 col-form-label">Tempat Lahir</label>
+			    <div class="col-sm-6">
+			      <input type="text" class="form-control" name="tempat_lahir" id="tempat_lahir" data-validation="required" data-validation-length="min4" th:field="*{tempat_lahir}"/>
+			    </div>
+			  </div>
+  			  <div class="form-group row">
+			    <label for="tanggal_lahir" class="col-sm-2 col-form-label">Tanggal Lahir</label>
+			    <div class="col-sm-6">
+			      <input type="text" class="form-control" name="tanggal_lahir" placeholder="ex:1994-05-05" data-validation="required" data-validation-format="yyyy-mm-dd" id="tangal_lahir" th:field="*{tanggal_lahir}"/>
+			    </div>
+			  </div>
+  			  <div class="form-group row">
+			    <label for="jenis_kelamin" class="col-sm-2 col-form-label">Jenis Kelamin</label>
+			    <div class="col-sm-6">
+			      <select class="form-control" id="jenis_kelamin" name="jenis_kelamin" data-validation="required" th:field="*{jenis_kelamin}">
+				    <option value="0">Laki-Laki</option>
+				    <option value="1">Perempuan</option>
+				  </select>
+			    </div>
+			  </div>
+   			  <div class="form-group row">
+			    <label for="agama" class="col-sm-2 col-form-label">Agama</label>
+			    <div class="col-sm-6">
+			      <select class="form-control" id="agama" name="agama" data-validation="required" th:field="*{agama}">
+				    <option value="Protestan">Protestan</option>
+				    <option value="Katolik">Katolik</option>
+				    <option value="Budha">Budha</option>
+				    <option value="Konghucu">Konghucu</option>
+				    <option value="Hindu">Hindu</option>
+				    <option value="Islam">Islam</option>
+				  </select>
+			    </div>
+			  </div>
+			  <div class="form-group row">
+			    <label for="golongan_darah" class="col-sm-2 col-form-label">Golongan Darah</label>
+			    <div class="col-sm-6">
+			      <select class="form-control" id="golongan_darah" name="golongan_darah" data-validation="required" th:field="*{golongan_darah}">
+				    <option value="AB-">AB-</option>
+				    <option value="AB+">AB+</option>
+				    <option value="A-">A-</option>
+				    <option value="A+">A+</option>
+				    <option value="B-">B-</option>
+				    <option value="B+">B+</option>
+				    <option value="O-">O-</option>
+				    <option value="O+">O+</option>
+				  </select>
+			    </div>
+			  </div>
+			  <div class="form-group row">
+			    <label for="tahun_masuk" class="col-sm-2 col-form-label">Tahun Masuk</label>
+			    <div class="col-sm-6">
+			     	<input type="text" class="form-control" name="tahun_masuk" id="tahun_masuk" data-validation="required|number" th:field="*{tahun_masuk}"/>
+			    </div>
+			  </div>
+  			  <div class="form-group row">
+			    <label for="jalur_masuk" class="col-sm-2 col-form-label">Jalur Masuk</label>
+			    <div class="col-sm-6">
+			      <select class="form-control" id="jalur_masuk" name="jalur_masuk" data-validation="required" th:field="*{jalur_masuk}">
+				    <option value="Undangan Reguler/SNMPTN">Undangan Reguler/SNMPTN</option>
+				    <option value="Ujian Tulis Mandiri">Ujian Tulis Mandiri</option>
+				    <option value="Undangan Paralel/PPKB">Undangan Paralel/PPKB</option>
+				    <option value="Ujian Tulis Bersama/SBMPTN">Ujian Tulis Bersama/SBMPTN</option>
+				    <option value="Undangan Olimpiade">Undangan Olimpiade</option>
+				  </select>
+			    </div>
+			  </div>
+			  <div class="form-group row">
+			    <label for="id_prodi" class="col-sm-2 col-form-label">Id Program Studi</label>
+			    <div class="col-sm-6">
+			     	<input type="text" class="form-control" name="id_prodi" id="id_prodi" data-validation="required|number" th:field="*{id_prodi}"/>
+			    </div>
+			  </div>
+  			  <div class="form-group row">
+			   	<button type="submit" class="btn btn-primary" value="Submit">Submit</button>
+			  </div>
+			</form>
+      		
+      	</div>
+      </div>
+    </div>
+  </section>
+
+</body>
+<script th:inline="javascript">
+
+$(document).ready(function() {
+	  $.validate();
+} );
+</script>
+</html>

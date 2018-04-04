@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragment :: head">
+		
+</head>
+
+<body>
+
+ <header id="header" th:replace="fragments/fragment :: header">
+ </header>
+ 
+ <section id="heroV2">
+    <div class="hero-container">
+      <div class="row justify-content-md-center">
+      <div class="col-md-10 col-center">
+      		<label th:text="'Lihat Data Mahasiswa Program Studi ' + ${prodi} + ' '+ ${fakultas} + ' ' + ${universitas}"></label>
+      		<table id="student-table" class="stripe" style="width:100%">
+	        <thead>
+	            <tr>
+	                <th>No.</th>
+	                <th>NIK</th>
+	                <th>Nama</th>
+	                <th>Program Studi</th>
+	                <th>Tahun Masuk</th>
+	                <th>Jalur Masuk</th>
+	                <th>Action</th>
+	            </tr>
+	        </thead>
+	        <tbody>
+	        	<tr th:each="item ,iterationStatus: ${mahasiswa}" th:class="${iterationStatus.odd} ? 'odd'">
+	        		<td th:text="${iterationStatus.count}"></td>
+	        		<td th:text="${item.npm}"></td>
+	        		<td th:text="${item.nama}"></td>
+	        		<td th:text="${prodi}"></td>
+	        		<td th:text="${item.tahun_masuk}"></td>
+	        		<td th:text="${item.jalur_masuk}"></td>
+	        		<td>
+	        			<a th:href="'/mahasiswa?npm=' + ${item.npm}" > Lihat Detail</a>
+	        			|
+	        			<a th:href="'/mahasiswa/ubah/' + ${item.npm}" > Update</a>
+	        		</td>
+	        	</tr>
+	        </tbody>
+	    </table>
+      		
+      		
+      		
+      		
+      	</div>
+      </div>
+    </div>
+  </section>
+
+</body>
+<script th:inline="javascript">
+
+$(document).ready(function() {
+	$('#student-table').DataTable();
+} );
+</script>
+</html>

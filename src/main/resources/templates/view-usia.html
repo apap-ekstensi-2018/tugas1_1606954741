@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragment :: head">
+</head>
+
+<body>
+
+ <header id="header" th:replace="fragments/fragment :: header">
+ </header>
+ 
+ <section id="heroV2">
+    <div class="hero-container">
+      <div class="row justify-content-md-center">
+      <div class="col-md-8">
+      	
+      		<h4>Cari Mahasiswa Tertua dan Termuda Berdasarkan Prodi dan Tahun Masuk</h4>
+      		
+      		<form action="/mahasiswa/postCariUsia" method="GET">
+			  
+			  <div class="form-group row">
+			    <label for="tahun" class="col-sm-2 col-form-label">ID Program Studi</label>
+			     <div class="col-sm-6">
+			      <input type="text" class="form-control" name="id_prodi" id="id_prodi"/>
+			    </div>
+			  </div>
+			  <div class="form-group row">
+			    <label for="tahun" class="col-sm-2 col-form-label">Tahun Masuk</label>
+			     <div class="col-sm-6">
+			      <input type="text" class="form-control" name="tahun_masuk" id="tahun_masuk"/>
+			    </div>
+			  </div>
+			  <div class="form-group row">
+			   	<button type="submit" class="btn btn-primary" value="Submit">Cari</button>
+			  </div>
+			  
+			</form>
+      		
+      	</div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
